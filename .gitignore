@@ -1,0 +1,12 @@
+# Android / Gradle
+**/.gradle/
+**/build/
+**/local.properties
+**/*.iml
+
+# IDE
+.idea/
+.vscode/
+
+# macOS
+.DS_Store

@@ -1,0 +1,15 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <path
+        android:fillColor="#111827"
+        android:pathData="M0,0h108v108h-108z" />
+
+    <!-- simple 'bookmark' glyph -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M36,24h36c3.314,0 6,2.686 6,6v54l-24,-12 -24,12v-54c0,-3.314 2.686,-6 6,-6z" />
+</vector>
