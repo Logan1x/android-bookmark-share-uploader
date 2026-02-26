@@ -8,6 +8,7 @@
     android:icon="@drawable/ic_launcher"
     android:roundIcon="@drawable/ic_launcher"
     android:supportsRtl="true"
+    android:usesCleartextTraffic="true"
     android:theme="@style/Theme.BookmarkUploader">
 
     <!-- Share target receiver. No launcher activity for MVP. -->

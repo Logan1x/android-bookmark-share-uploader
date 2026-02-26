@@ -3,6 +3,7 @@ package com.logan1x.bookmarkuploader
 import android.app.Activity
 import android.os.Bundle
 import android.content.Intent
+import android.util.Log
 import android.widget.Toast
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
@@ -12,6 +13,8 @@ import org.json.JSONObject
 import java.util.regex.Pattern
 
 class ShareReceiverActivity : Activity() {
+
+  private val tag = "BookmarkUploader"
 
   // MVP: hardcode your LAN endpoint. Later we can add a settings UI.
   // Confirmed by you: http allowed + no auth.
@@ -93,8 +96,14 @@ class ShareReceiverActivity : Activity() {
           }
         }
       } catch (e: Exception) {
+        Log.e(tag, "Upload failed", e)
         runOnUiThread {
-          toast("Failed (network)")
+          val message = e.message ?: "network"
+          if (message.contains("CLEARTEXT", ignoreCase = true)) {
+            toast("Failed (cleartext blocked)")
+          } else {
+            toast("Failed (network)")
+          }
           finish()
         }
       }
