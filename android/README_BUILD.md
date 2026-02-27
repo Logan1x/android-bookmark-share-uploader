@@ -14,8 +14,10 @@ But the project is ready to build locally in **Android Studio**.
    - Open Chrome → Share any link → choose **Bookmark Uploader**
 
 ## Notes
-- Endpoint is currently hardcoded in `ShareReceiverActivity.kt`:
-  `http://192.168.31.176:8787/v1/items`
+- Endpoint is configurable in app:
+  - Open **Bookmark Uploader** from launcher.
+  - Enter your full endpoint URL (for example `http://192.168.31.176:8787/v1/items`) and tap **Save Endpoint**.
+  - If nothing is saved, app uses default: `http://192.168.31.176:8787/v1/items`.
 - No auth.
 - MVP behavior: takes the **first URL** in shared text.
 

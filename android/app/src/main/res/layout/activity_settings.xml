@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:fillViewport="true"
+  android:padding="20dp">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/settings_title"
+      android:textAppearance="@android:style/TextAppearance.Material.Large"
+      android:textStyle="bold" />
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dp"
+      android:text="@string/settings_subtitle"
+      android:textAppearance="@android:style/TextAppearance.Material.Body1" />
+
+    <EditText
+      android:id="@+id/endpointInput"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:autofillHints="url"
+      android:hint="@string/endpoint_hint"
+      android:inputType="textUri"
+      android:maxLines="1"
+      android:singleLine="true" />
+
+    <Button
+      android:id="@+id/saveEndpointButton"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:text="@string/save_endpoint" />
+
+    <Button
+      android:id="@+id/resetEndpointButton"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dp"
+      android:text="@string/reset_endpoint" />
+  </LinearLayout>
+</ScrollView>

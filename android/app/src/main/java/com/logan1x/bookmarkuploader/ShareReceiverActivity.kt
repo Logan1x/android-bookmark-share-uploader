@@ -16,10 +16,6 @@ class ShareReceiverActivity : Activity() {
 
   private val tag = "BookmarkUploader"
 
-  // MVP: hardcode your LAN endpoint. Later we can add a settings UI.
-  // Confirmed by you: http allowed + no auth.
-  private val endpointUrl = "http://192.168.31.176:8787/v1/items"
-
   private val http = OkHttpClient()
 
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -64,6 +60,13 @@ class ShareReceiverActivity : Activity() {
 
   private fun upload(url: String, content: String, rawText: String) {
     toast("Uploading…")
+
+    val endpointUrl = EndpointConfig.getEndpoint(this)
+    if (!EndpointConfig.isValidEndpoint(endpointUrl)) {
+      toast("Invalid endpoint")
+      finish()
+      return
+    }
 
     val json = JSONObject().apply {
       put("url", url)
