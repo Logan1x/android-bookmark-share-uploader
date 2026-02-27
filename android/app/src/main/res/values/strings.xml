@@ -3,6 +3,11 @@
   <string name="settings_title">Bookmark Uploader</string>
   <string name="settings_subtitle">Enter your bookmark API endpoint</string>
   <string name="endpoint_hint">http://192.168.31.176:8787/v1/items</string>
+  <string name="token_label">Bearer token (optional)</string>
+  <string name="token_hint">Paste token (no Bearer prefix)</string>
+  <string name="token_info_content_desc">Bearer token help</string>
+  <string name="token_info_title">Bearer token</string>
+  <string name="token_info_message">Optional. If set, the app sends Authorization: Bearer &lt;token&gt; with each bookmark request. Leave empty to send requests without auth.</string>
   <string name="save_endpoint">Save Endpoint</string>
   <string name="reset_endpoint">Reset to Default</string>
 </resources>

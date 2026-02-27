@@ -18,7 +18,9 @@ But the project is ready to build locally in **Android Studio**.
   - Open **Bookmark Uploader** from launcher.
   - Enter your full endpoint URL (for example `http://192.168.31.176:8787/v1/items`) and tap **Save Endpoint**.
   - If nothing is saved, app uses default: `http://192.168.31.176:8787/v1/items`.
-- No auth.
+- Bearer token is optional and configurable in app:
+  - Leave token empty to send requests without auth.
+  - If token is set, app sends `Authorization: Bearer <token>` on every request.
 - MVP behavior: takes the **first URL** in shared text.
 
 ## Next improvement (I can implement)

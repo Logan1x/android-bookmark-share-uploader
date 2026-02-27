@@ -80,10 +80,14 @@ class ShareReceiverActivity : Activity() {
     }
 
     val body = json.toString().toRequestBody("application/json; charset=utf-8".toMediaType())
-    val req = Request.Builder()
+    val token = EndpointConfig.getBearerToken(this)
+    val reqBuilder = Request.Builder()
       .url(endpointUrl)
       .post(body)
-      .build()
+    if (token.isNotBlank()) {
+      reqBuilder.addHeader("Authorization", "Bearer $token")
+    }
+    val req = reqBuilder.build()
 
     // Fire-and-forget on a background thread (MVP).
     Thread {
